@@ -7,8 +7,8 @@ const { exec } = require('child_process');
 // Gmail IMAP ayarlarınız
 const config = {
     imap: {
-        user: 'selenlalesari@gmail.com',
-        password: 'tvgo xwxf hqgb uogj',
+        user: 'Your Mail',
+        password: 'Your token',
         host: 'imap.gmail.com',
         port: 993,
         tls: true,
@@ -21,7 +21,7 @@ const config = {
 function solveCaptchaWithPython(base64Data) {
     return new Promise((resolve, reject) => {
         // Buradaki python komutu kendi path’inize veya scriptinize göre düzenlenmelidir
-        const command = `python3 /Users/oguzhan/Desktop/vize-bot/bot/example.py "data:image/png;base64,${base64Data}"`;
+        const command = `python3 /Users/oguzhan/Desktop/bot/example.py "data:image/png;base64,${base64Data}"`;
         exec(command, { maxBuffer: 1024 * 1024 }, (error, stdout, stderr) => {
             if (error) {
                 return reject(`Node.js Hata: ${error.message}`);
